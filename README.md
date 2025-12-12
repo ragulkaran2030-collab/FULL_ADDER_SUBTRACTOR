@@ -43,13 +43,60 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+```
+// Full Adder in Verilog
+module full_adder (
+    input  wire a, b, cin,   // Inputs
+    output wire sum, carry   // Outputs
+);
+
+    // Logic equations
+    assign sum   = a ^ b ^ cin;                  // XOR for sum
+    assign carry = (a & b) | (b & cin) | (a & cin); // Majority function for carry
+
+endmodule
+
+// Full Subtractor in Verilog
+module full_subtractor (
+    input  wire a, b, bin,       // Inputs
+    output wire diff, borrow     // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b ^ bin;                  // Difference
+    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+
+endmodule
+```
+
+
+
+
+
+
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
 **RTL Schematic**
+# Full_adder #
+<img width="684" height="291" alt="Screenshot 2025-12-12 195444" src="https://github.com/user-attachments/assets/5d2917f4-5cef-4552-9265-e4d9e15cb09d" />
+
+# Full_subractor #
+<img width="758" height="266" alt="Screenshot 2025-12-12 195609" src="https://github.com/user-attachments/assets/ccf5f0e2-fd7b-4de3-94d8-abb77ca40aee" />
+
+
+
+
 
 **Output Timing Waveform**
+# Full_adder #
+<img width="837" height="173" alt="Screenshot 2025-12-12 195513" src="https://github.com/user-attachments/assets/76167c57-befc-40a2-b0bc-6f1afe1585be" />
+# Full_subractor #
+<img width="838" height="213" alt="Screenshot 2025-12-12 195628" src="https://github.com/user-attachments/assets/67fc3747-939f-4897-b050-e3bb9ccd2f8b" />
+
+
+
 
 **Result:**
 
